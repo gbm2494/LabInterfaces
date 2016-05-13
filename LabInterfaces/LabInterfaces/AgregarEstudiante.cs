@@ -55,6 +55,13 @@ namespace LabInterfaces
             {
                 MessageBox.Show("El estudiante ha sido agregado exitosamente", "Resultados", MessageBoxButtons.OK, MessageBoxIcon.None);
                 txtCarne.Clear();
+                txtCedula.Clear();
+                txtNombre.Clear();
+                txtApe1.Clear();
+                txtApe2.Clear();
+                txtEmail.Clear();
+                txtDireccion.Clear();
+                txtTelefono.Clear();
 
             }
             else if (resultado == 2627)
