@@ -1,6 +1,6 @@
 CREATE TABLE Estudiante(
 Cedula varchar(9) PRIMARY KEY,
-carne varchar(6) UNIQUE,
+carne varchar(6) UNIQUE not null,
 nombre varchar(20) not null,
 apellido1 varchar(20) not null,
 apellido2 varchar(20) not null,

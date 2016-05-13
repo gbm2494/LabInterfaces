@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Diagnostics;
 using System.Configuration;
 
 // Namespace de acceso a base de datos
@@ -12,12 +12,13 @@ using System.Data.SqlClient;
 // Namespace para mostrar mensajes
 using System.Windows.Forms;
 
-namespace Laboratorio3
+/*Cambiar el namespace para que funcione!!*/
+namespace LabInterfaces
 {
     class AccesoBaseDatos
     {
         /*En Initial Catalog se agrega la base de datos propia. Intregated Security es para utilizar Windows Authentication*/
-        String conexion = "Data Source=10.1.4.59; Initial Catalog=BD1_B31003; Integrated Security=SSPI";
+        String conexion = "Data Source=10.1.4.55; Initial Catalog=gaudyblanco; Integrated Security=SSPI";
         
         /**
          * Constructor
@@ -70,17 +71,31 @@ namespace Laboratorio3
 			return table;
         }
 
-        public void insertarDatos(String consulta)
+        public int insertarDatos(String consulta)
         {
+            int error = 0;
+
             SqlConnection sqlConnection = new SqlConnection(conexion);
             sqlConnection.Open();
 
             SqlCommand cons = new SqlCommand(consulta, sqlConnection);
 
-            cons.ExecuteNonQuery();
+            try
+            {
+                cons.ExecuteNonQuery();
+            }
+            catch(SqlException e)
+            {
+                error = e.Number;
+                Debug.WriteLine("Error: " + error);
+            }
 
-            sqlConnection.Close();
+            finally
+            {
+                sqlConnection.Close();
+            }
 
+            return error;
         }
     }
 }

@@ -1,0 +1,10 @@
+C:\Users\B31003\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\bin\Debug\LabInterfaces.exe.config
+C:\Users\B31003\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.csprojResolveAssemblyReference.cache
+C:\Users\B31003\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.AgregarEstudiante.resources
+C:\Users\B31003\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.ListaEstudiantes.resources
+C:\Users\B31003\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.Properties.Resources.resources
+C:\Users\B31003\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.csproj.GenerateResource.Cache
+C:\Users\B31003\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\bin\Debug\LabInterfaces.exe
+C:\Users\B31003\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\bin\Debug\LabInterfaces.pdb
+C:\Users\B31003\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.exe
+C:\Users\B31003\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.pdb

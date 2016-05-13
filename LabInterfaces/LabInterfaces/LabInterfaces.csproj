@@ -44,12 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoBaseDatos.cs" />
     <Compile Include="AgregarEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AgregarEstudiante.Designer.cs">
       <DependentUpon>AgregarEstudiante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estudiante.cs" />
     <Compile Include="ListaEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
