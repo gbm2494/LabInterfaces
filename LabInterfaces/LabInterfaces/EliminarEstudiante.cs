@@ -27,6 +27,7 @@ namespace LabInterfaces
         private void EliminarEstudiante_Load(object sender, EventArgs e)
         {
             llenarCombobox(cmbNombre);
+            llenarTabla(dgvEstudiantes);
         }
 
         private void llenarCombobox(ComboBox combobox)
@@ -50,5 +51,25 @@ namespace LabInterfaces
             combobox.SelectedIndex = 0;
 
         }
+
+        private void llenarTabla(DataGridView dataGridView)
+        {
+            DataTable tabla = estudiante.obtenerEstudiantes(null, null);
+
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = tabla;
+            dataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            dataGridView.DataSource = bindingSource;
+            for (int i = 0; i < dgvEstudiantes.ColumnCount; i++)
+            {
+                dataGridView.Columns[i].Width = 100;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /*Llamar al procedimiento almacenado, cambiar el procedimiento para que use nombre y no cedula*/
+        }
+
     }
 }
