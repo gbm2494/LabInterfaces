@@ -51,6 +51,12 @@
     <Compile Include="AgregarEstudiante.Designer.cs">
       <DependentUpon>AgregarEstudiante.cs</DependentUpon>
     </Compile>
+    <Compile Include="EliminarEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarEstudiante.Designer.cs">
+      <DependentUpon>EliminarEstudiante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Estudiante.cs" />
     <Compile Include="ListaEstudiantes.cs">
       <SubType>Form</SubType>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AgregarEstudiante.resx">
       <DependentUpon>AgregarEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarEstudiante.resx">
+      <DependentUpon>EliminarEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaEstudiantes.resx">
       <DependentUpon>ListaEstudiantes.cs</DependentUpon>

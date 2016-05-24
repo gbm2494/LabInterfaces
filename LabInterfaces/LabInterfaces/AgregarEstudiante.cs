@@ -69,5 +69,12 @@ namespace LabInterfaces
                 MessageBox.Show("Ya existe un estudiante asociado a este numero de cedula en el sistema", "Resultados", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EliminarEstudiante eliminar = new EliminarEstudiante();
+            eliminar.Show();
+            this.Hide();
+        }
     }
 }

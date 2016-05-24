@@ -8,3 +8,4 @@ C:\Users\B31003\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\bin\Debug\LabI
 C:\Users\B31003\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\bin\Debug\LabInterfaces.pdb
 C:\Users\B31003\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.exe
 C:\Users\B31003\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.pdb
+C:\Users\B31003\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.EliminarEstudiante.resources
