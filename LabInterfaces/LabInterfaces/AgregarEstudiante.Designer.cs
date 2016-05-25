@@ -54,7 +54,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lkLista = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.lkEliminar = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -305,29 +305,29 @@
             this.lkLista.Location = new System.Drawing.Point(502, 26);
             this.lkLista.Name = "lkLista";
             this.lkLista.Size = new System.Drawing.Size(148, 16);
-            this.lkLista.TabIndex = 2;
+            this.lkLista.TabIndex = 4;
             this.lkLista.TabStop = true;
             this.lkLista.Text = "Ir a Lista de estudiantes";
-            this.lkLista.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.lkLista.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lkLista_LinkClicked);
             // 
-            // linkLabel2
+            // lkEliminar
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(529, 42);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(121, 16);
-            this.linkLabel2.TabIndex = 3;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Eliminar estudiante";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.lkEliminar.AutoSize = true;
+            this.lkEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkEliminar.Location = new System.Drawing.Point(529, 42);
+            this.lkEliminar.Name = "lkEliminar";
+            this.lkEliminar.Size = new System.Drawing.Size(121, 16);
+            this.lkEliminar.TabIndex = 5;
+            this.lkEliminar.TabStop = true;
+            this.lkEliminar.Text = "Eliminar estudiante";
+            this.lkEliminar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lkEliminar_LinkClicked);
             // 
             // AgregarEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 416);
-            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.lkEliminar);
             this.Controls.Add(this.lkLista);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
@@ -367,9 +367,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.LinkLabel lkLista;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel lkLista;
+        private System.Windows.Forms.LinkLabel lkEliminar;
     }
 }
 

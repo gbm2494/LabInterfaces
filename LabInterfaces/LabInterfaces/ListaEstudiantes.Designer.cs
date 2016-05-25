@@ -33,10 +33,10 @@
             this.cmbNombre = new System.Windows.Forms.ComboBox();
             this.dgvEstudiantes = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lkAgregar = new System.Windows.Forms.LinkLabel();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,18 +90,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Estudiantes";
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(502, 26);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(144, 16);
-            this.linkLabel1.TabIndex = 7;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Ir a Agregar Estudiante";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -120,25 +108,38 @@
             this.txtBuscar.Size = new System.Drawing.Size(114, 22);
             this.txtBuscar.TabIndex = 9;
             // 
-            // button1
+            // lkAgregar
             // 
-            this.button1.Location = new System.Drawing.Point(583, 61);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.lkAgregar.AutoSize = true;
+            this.lkAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkAgregar.Location = new System.Drawing.Point(514, 26);
+            this.lkAgregar.Name = "lkAgregar";
+            this.lkAgregar.Size = new System.Drawing.Size(144, 16);
+            this.lkAgregar.TabIndex = 11;
+            this.lkAgregar.TabStop = true;
+            this.lkAgregar.Text = "Ir a Agregar Estudiante";
+            this.lkAgregar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lkAgregar_LinkClicked);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(583, 60);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 12;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // ListaEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 416);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.lkAgregar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvEstudiantes);
             this.Controls.Add(this.cmbNombre);
@@ -161,9 +162,9 @@
         private System.Windows.Forms.ComboBox cmbNombre;
         private System.Windows.Forms.DataGridView dgvEstudiantes;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.LinkLabel lkAgregar;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

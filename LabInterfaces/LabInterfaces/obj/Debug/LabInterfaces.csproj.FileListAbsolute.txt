@@ -20,3 +20,6 @@ C:\Users\Gaudy-PC\UCR\2016 I Ciclo\Asistencias\Bases I\LabInterfaces\LabInterfac
 C:\Users\Gaudy-PC\UCR\2016 I Ciclo\Asistencias\Bases I\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.ListaEstudiantes.resources
 C:\Users\Gaudy-PC\UCR\2016 I Ciclo\Asistencias\Bases I\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.Properties.Resources.resources
 C:\Users\Gaudy-PC\UCR\2016 I Ciclo\Asistencias\Bases I\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.csproj.GenerateResource.Cache
+C:\Users\gblanco\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\bin\Debug\LabInterfaces.exe.config
+C:\Users\gblanco\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.exe
+C:\Users\gblanco\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.pdb

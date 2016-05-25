@@ -33,7 +33,7 @@ namespace LabInterfaces
          Recibe: Nada
          Modifica: Realiza la selección de los nombres de estudiantes y lo carga en un dataReader
          Retorna: el dataReader con los datos*/
-        public SqlDataReader obtenerListaEstudiantes()
+        public SqlDataReader obtenerListaNombresEstudiantes()
         {
             SqlDataReader datos = null;
             try
