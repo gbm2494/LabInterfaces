@@ -26,15 +26,6 @@ namespace LabInterfaces
             estudiante = new Estudiante();
         }
 
-        /*Método que se activa cuando se le da click al link de Lista de Estudiantes*/
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            //Creación de la interfaz ListaEstudiantes y se muestra
-            ListaEstudiantes lista = new ListaEstudiantes();
-            lista.Show();
-            this.Hide();
-        }
-
         /*Método que se activa al dar click en el botón guardar para guardar un nuevo estudiante en la base de datod*/
         private void btnGuardar_Click(object sender, EventArgs e)
         {
