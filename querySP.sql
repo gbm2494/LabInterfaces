@@ -14,10 +14,8 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE eliminarEstudiante 
-	@Cedula varchar(9)
+CREATE PROCEDURE eliminarEstudiante @nombre varchar(20)
+
 AS
-BEGIN
-	DELETE FROM Estudiante WHERE Cedula = @Cedula
-END
+	DELETE FROM Estudiante WHERE Estudiante.nombre = @nombre
 GO

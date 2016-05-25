@@ -70,5 +70,10 @@ namespace LabInterfaces
             return tabla;
         }
 
+        public int eliminarEstudiante(string nombre)
+        {
+            return bd.eliminarEstudiante(nombre);
+        }
+
     }
 }

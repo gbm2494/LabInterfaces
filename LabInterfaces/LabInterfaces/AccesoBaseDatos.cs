@@ -97,5 +97,36 @@ namespace LabInterfaces
 
             return error;
         }
+
+        /*Metodo para insertar un nuevo producto en la base de datos*/
+        public int eliminarEstudiante(string nombre)
+        {
+
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                using (SqlCommand cmd = new SqlCommand("eliminarEstudiante", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
+
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        return error;
+                    }
+                    catch (SqlException ex)
+                    {
+
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+
+        }
+
     }
 }

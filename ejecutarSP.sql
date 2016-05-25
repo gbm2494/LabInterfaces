@@ -1,2 +1,1 @@
-USE gaudyblanco
-EXEC eliminarEstudiante @Cedula = '115650402'
+EXEC eliminarEstudiante @nombre = '115650402'

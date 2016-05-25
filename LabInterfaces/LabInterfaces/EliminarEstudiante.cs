@@ -69,6 +69,16 @@ namespace LabInterfaces
         private void button1_Click(object sender, EventArgs e)
         {
             /*Llamar al procedimiento almacenado, cambiar el procedimiento para que use nombre y no cedula*/
+            estudiante.eliminarEstudiante(cmbNombre.Text);
+            llenarCombobox(cmbNombre);
+            llenarTabla(dgvEstudiantes);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AgregarEstudiante agregar = new AgregarEstudiante();
+            agregar.Show();
+            this.Hide();
         }
 
     }
