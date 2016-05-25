@@ -19,12 +19,14 @@ namespace LabInterfaces
     {
         Estudiante estudiante;
 
+        /*Constructor de la clase*/
         public AgregarEstudiante()
         {
             InitializeComponent();
             estudiante = new Estudiante();
         }
 
+        /*Método */
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ListaEstudiantes lista = new ListaEstudiantes();
