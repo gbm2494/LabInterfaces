@@ -111,17 +111,19 @@ namespace LabInterfaces
          Retorna: el tipo de error que generó la consulta o cero si la ejecución fue exitosa*/
         public int eliminarEstudiante(string nombre)
         {
-
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
             {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
                 using (SqlCommand cmd = new SqlCommand("eliminarEstudiante", con))
                 {
                     try
                     {
-                        //Se preparan los parámetros que recibe el procedimiento almacenado
                         cmd.CommandType = CommandType.StoredProcedure;
 
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
                         cmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre;
 
                         con.Open();
