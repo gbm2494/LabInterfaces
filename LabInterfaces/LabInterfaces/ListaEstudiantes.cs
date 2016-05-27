@@ -65,7 +65,8 @@ namespace LabInterfaces
         }
 
         /*Método para llenar un datagridview con datos específicos
-         Recibe: Un control datagridview que va a cargar con datos
+         Recibe: Un control datagridview que va a cargar con datos, una string en caso que se quiera filtrar por el valor
+         * del combobox y un string de filtroGeneral en caso que se quiera filtrar por el texto introducido por el usuario
          Modifica: carga los datos en el datagridview
          Retorna: ningún valor*/
         private void llenarTabla(DataGridView dataGridView, string filtroCombobox, string filtroGeneral)
@@ -113,5 +114,6 @@ namespace LabInterfaces
             llenarTabla(dgvEstudiantes, null, txtBuscar.Text);
 
         }
+
     }
 }
