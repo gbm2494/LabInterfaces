@@ -37,7 +37,6 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lkAgregar = new System.Windows.Forms.LinkLabel();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstudiantes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,20 +131,11 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(315, 109);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 13;
-            // 
             // ListaEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 416);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lkAgregar);
             this.Controls.Add(this.txtBuscar);
@@ -176,6 +166,5 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.LinkLabel lkAgregar;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
