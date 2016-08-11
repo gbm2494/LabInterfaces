@@ -55,11 +55,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lkLista = new System.Windows.Forms.LinkLabel();
             this.lkEliminar = new System.Windows.Forms.LinkLabel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtPassword);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.txtUsuario);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.dtpFecha);
             this.groupBox1.Controls.Add(this.rbOtro);
@@ -86,7 +94,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(30, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(620, 288);
+            this.groupBox1.Size = new System.Drawing.Size(620, 331);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del estudiante";
@@ -104,7 +112,7 @@
             // dtpFecha
             // 
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(452, 193);
+            this.dtpFecha.Location = new System.Drawing.Point(138, 189);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(128, 22);
             this.dtpFecha.TabIndex = 12;
@@ -113,7 +121,7 @@
             // 
             this.rbOtro.AutoSize = true;
             this.rbOtro.Checked = true;
-            this.rbOtro.Location = new System.Drawing.Point(425, 163);
+            this.rbOtro.Location = new System.Drawing.Point(426, 198);
             this.rbOtro.Name = "rbOtro";
             this.rbOtro.Size = new System.Drawing.Size(51, 20);
             this.rbOtro.TabIndex = 11;
@@ -124,7 +132,7 @@
             // rbMasc
             // 
             this.rbMasc.AutoSize = true;
-            this.rbMasc.Location = new System.Drawing.Point(425, 144);
+            this.rbMasc.Location = new System.Drawing.Point(426, 179);
             this.rbMasc.Name = "rbMasc";
             this.rbMasc.Size = new System.Drawing.Size(87, 20);
             this.rbMasc.TabIndex = 10;
@@ -134,7 +142,7 @@
             // rbFem
             // 
             this.rbFem.AutoSize = true;
-            this.rbFem.Location = new System.Drawing.Point(425, 125);
+            this.rbFem.Location = new System.Drawing.Point(426, 160);
             this.rbFem.Name = "rbFem";
             this.rbFem.Size = new System.Drawing.Size(86, 20);
             this.rbFem.TabIndex = 9;
@@ -150,14 +158,14 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(425, 57);
+            this.txtTelefono.Location = new System.Drawing.Point(426, 92);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(155, 22);
             this.txtTelefono.TabIndex = 7;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(425, 24);
+            this.txtDireccion.Location = new System.Drawing.Point(116, 220);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(155, 22);
             this.txtDireccion.TabIndex = 6;
@@ -174,7 +182,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(334, 60);
+            this.label8.Location = new System.Drawing.Point(335, 95);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 16);
             this.label8.TabIndex = 13;
@@ -183,7 +191,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(334, 27);
+            this.label9.Location = new System.Drawing.Point(15, 222);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 16);
             this.label9.TabIndex = 12;
@@ -192,7 +200,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(329, 198);
+            this.label10.Location = new System.Drawing.Point(15, 194);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(117, 16);
             this.label10.TabIndex = 11;
@@ -201,7 +209,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(337, 125);
+            this.label11.Location = new System.Drawing.Point(338, 160);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(42, 16);
             this.label11.TabIndex = 10;
@@ -209,7 +217,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(425, 92);
+            this.txtEmail.Location = new System.Drawing.Point(426, 127);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(155, 22);
             this.txtEmail.TabIndex = 8;
@@ -245,7 +253,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(334, 95);
+            this.label6.Location = new System.Drawing.Point(335, 130);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 16);
             this.label6.TabIndex = 4;
@@ -322,6 +330,38 @@
             this.lkEliminar.Text = "Eliminar estudiante";
             this.lkEliminar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lkEliminar_LinkClicked);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(337, 24);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 16);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Usuario:";
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(425, 24);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(155, 22);
+            this.txtUsuario.TabIndex = 16;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(335, 62);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(80, 16);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Contraseña:";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(426, 59);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(155, 22);
+            this.txtPassword.TabIndex = 18;
+            // 
             // AgregarEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,6 +410,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel lkLista;
         private System.Windows.Forms.LinkLabel lkEliminar;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.Label label12;
     }
 }
 

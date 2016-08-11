@@ -14,7 +14,7 @@ namespace LabInterfaces
     class AccesoBaseDatos
     {
         /*En Initial Catalog se agrega la base de datos propia. Intregated Security es para utilizar Windows Authentication*/
-        String conexion = "Data Source=10.1.4.55; Initial Catalog=gaudyblanco; Integrated Security=SSPI";
+        String conexion = "Data Source=RABAT; Initial Catalog=gaudyblanco; Integrated Security=SSPI";
         
         /**
          * Constructor de la clase
@@ -131,6 +131,55 @@ namespace LabInterfaces
                         //Se ejecuta el procedimiento almacenado
                         cmd.ExecuteNonQuery();
                         return error;
+                    }
+                    catch (SqlException ex)
+                    {
+
+                        error = ex.Number;
+                        return error;
+                    }
+                }
+            }
+
+        }
+
+        /*Método para llamar al procedimiento almacenado de agregar usuario 
+         Recibe: 
+         Modifica: 
+         Retorna: */
+        public int agregarUsuario(string usuario, string password)
+        {
+            int error = 0;
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("uspAddUser", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        Boolean prueba = false;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@pLogin", SqlDbType.VarChar).Value = usuario;
+                        cmd.Parameters.Add("@pPassword", SqlDbType.VarChar).Value = password;
+                        SqlParameter outputIdParam = new SqlParameter("@responseMessage", SqlDbType.Bit)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+
+                        cmd.Parameters.Add(outputIdParam);
+
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        return Convert.ToInt32(outputIdParam.Value);
+                        
                     }
                     catch (SqlException ex)
                     {

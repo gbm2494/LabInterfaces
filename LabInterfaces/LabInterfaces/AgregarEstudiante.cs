@@ -51,16 +51,25 @@ namespace LabInterfaces
             //Si la inserción devuelve un 0 la inserción fue exitosa, por lo que se muestra un mensaje de éxito
             if(resultado == 0)
             {
-                MessageBox.Show("El estudiante ha sido agregado exitosamente", "Resultados", MessageBoxButtons.OK, MessageBoxIcon.None);
-                //Se limpian las cajas de texto para permitir al usuario añadir un nuevo estudiante cuando lo desee
-                txtCarne.Clear();
-                txtCedula.Clear();
-                txtNombre.Clear();
-                txtApe1.Clear();
-                txtApe2.Clear();
-                txtEmail.Clear();
-                txtDireccion.Clear();
-                txtTelefono.Clear();
+                int resultado1 = estudiante.agregarUsuario(txtUsuario.Text, txtPassword.Text);
+                if (resultado1 == 1)
+                {
+                    MessageBox.Show("El estudiante ha sido agregado exitosamente", "Resultados", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    //Se limpian las cajas de texto para permitir al usuario añadir un nuevo estudiante cuando lo desee
+                    txtCarne.Clear();
+                    txtCedula.Clear();
+                    txtNombre.Clear();
+                    txtApe1.Clear();
+                    txtApe2.Clear();
+                    txtEmail.Clear();
+                    txtDireccion.Clear();
+                    txtTelefono.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Ya existe un estudiante asociado a este usuario en el sistema", "Resultados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
 
             }
             //si la inserción devuelve un código de error se puede validar con un mensaje de error personalizado

@@ -97,5 +97,14 @@ namespace LabInterfaces
             return bd.eliminarEstudiante(nombre);
         }
 
+        /*Método para agregar un usuario mediante el procedimiento almacenado
+         Recibe: 
+         Modifica: 
+         Retorna: */
+        public int agregarUsuario(string nombre, string password)
+        {
+            return bd.agregarUsuario(nombre, password);
+        }
+
     }
 }
