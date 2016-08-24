@@ -48,11 +48,14 @@ namespace LabInterfaces
               el cual recibe por parámetro todos los valores de la tabla Estudiante*/
             int resultado = estudiante.agregarEstudiante(txtCedula.Text, txtCarne.Text,  txtNombre.Text,  txtApe1.Text, txtApe2.Text, txtEmail.Text, genero, dtpFecha.Value.ToString("yyyy-MM-dd"), txtDireccion.Text ,txtTelefono.Text , 1);
 
-            //Si la inserción devuelve un 0 la inserción fue exitosa, por lo que se muestra un mensaje de éxito
+            //Si la inserción devuelve un 0 la inserción fue exitosa, por lo que se trata de insertar el usuario
             if(resultado == 0)
             {
-                int resultado1 = estudiante.agregarUsuario(txtUsuario.Text, txtPassword.Text);
-                if (resultado1 == 1)
+                //se inserta el usuario mediante el llamado al método agregarUsuario en la clase Estudiante
+                bool resultado1 = estudiante.agregarUsuario(txtUsuario.Text, txtPassword.Text, txtCedula.Text);
+
+                //si se agregó el nuevo usuario se muestra un mensaje de éxito
+                if (resultado1 == true)
                 {
                     MessageBox.Show("El estudiante ha sido agregado exitosamente", "Resultados", MessageBoxButtons.OK, MessageBoxIcon.None);
                     //Se limpian las cajas de texto para permitir al usuario añadir un nuevo estudiante cuando lo desee

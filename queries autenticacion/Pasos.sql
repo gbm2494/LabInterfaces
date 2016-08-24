@@ -2,13 +2,13 @@
 
 use gaudyblanco;
 
-CREATE TABLE dbo.[User]
+CREATE TABLE dbo.[Usuarios]
 (
-    UserID INT IDENTITY(1,1) NOT NULL,
-    LoginName NVARCHAR(40) NOT NULL,
+    cedulaUsuario varchar(9) NOT NULL,
+    nombreUsuario NVARCHAR(40) NOT NULL PRIMARY KEY,
     PasswordHash BINARY(64) NOT NULL,
     salt UNIQUEIDENTIFIER,
-    CONSTRAINT [PK_User_UserID] PRIMARY KEY CLUSTERED (UserID ASC)
+	FOREIGN KEY (cedulaUsuario) REFERENCES Estudiante (cedula)
 )
 
 /*Paso 2*/
@@ -22,17 +22,18 @@ Ejecutar el procedimiento almacenado para login
 */
 
 /*Pruebas para comprobar que sirve*/
-TRUNCATE TABLE [dbo].[User]
+TRUNCATE TABLE [dbo].[Usuarios]
 
 DECLARE @responseMessage NVARCHAR(250)
 
-EXEC dbo.uspAddUser
+EXEC dbo.agregarUsuario
+		  @cedula = '123456789',
           @pLogin = N'Admin',
           @pPassword = N'123',
           @responseMessage=@responseMessage OUTPUT
 
-SELECT UserID, LoginName, PasswordHash, Salt
-FROM [dbo].[User]
+SELECT cedulaUsuario, nombreUsuario, PasswordHash, Salt
+FROM [dbo].[Usuarios]
 
 /*Pruebas*/
 

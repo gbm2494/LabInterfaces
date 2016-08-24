@@ -1,6 +1,7 @@
-CREATE PROCEDURE dbo.uspAddUser
+CREATE PROCEDURE dbo.agregarUsuario
     @pLogin NVARCHAR(50), 
     @pPassword NVARCHAR(50),
+	@cedula varchar(9),
     @responseMessage bit OUTPUT
 AS
 BEGIN
@@ -9,8 +10,8 @@ BEGIN
     DECLARE @salt UNIQUEIDENTIFIER=NEWID()
     BEGIN TRY
 
-        INSERT INTO dbo.[User] (LoginName, PasswordHash, Salt)
-        VALUES(@pLogin, HASHBYTES('SHA2_512', @pPassword+CAST(@salt AS NVARCHAR(36))), @salt)
+        INSERT INTO dbo.[Usuarios] (cedulaUsuario, nombreUsuario, PasswordHash, Salt)
+        VALUES(@cedula, @pLogin, HASHBYTES('SHA2_512', @pPassword+CAST(@salt AS NVARCHAR(36))), @salt)
 
        SET @responseMessage=1
 

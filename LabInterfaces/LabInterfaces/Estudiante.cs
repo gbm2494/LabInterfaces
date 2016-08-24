@@ -101,9 +101,22 @@ namespace LabInterfaces
          Recibe: 
          Modifica: 
          Retorna: */
-        public int agregarUsuario(string nombre, string password)
+        public bool agregarUsuario(string nombre, string password, string cedula)
         {
-            return bd.agregarUsuario(nombre, password);
+
+            int resultado = bd.agregarUsuario(nombre, password, cedula);
+
+            //si el procedimiento almacenado devuelve un 1 es porque agregó un nuevo usuario, por lo que se convierte en true
+            if (resultado == 1)
+            {
+                return true;
+            }
+
+             //Cualquier valor distinto a 1 que el procedimiento almacenado significa que no agregó un nuevo usuario
+            else
+            {
+                return false;
+            }
         }
 
     }

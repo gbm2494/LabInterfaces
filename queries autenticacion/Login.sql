@@ -10,9 +10,9 @@ BEGIN
 
     DECLARE @userID INT
 
-    IF EXISTS (SELECT TOP 1 UserID FROM [dbo].[User] WHERE LoginName=@pLoginName)
+    IF EXISTS (SELECT TOP 1 cedulaUsuario FROM [dbo].[Usuarios] WHERE nombreUsuario=@pLoginName)
     BEGIN
-        SET @userID=(SELECT UserID FROM [dbo].[User] WHERE LoginName=@pLoginName AND PasswordHash=HASHBYTES('SHA2_512', @pPassword+CAST(Salt AS NVARCHAR(36))))
+        SET @userID=(SELECT cedulaUsuario FROM [dbo].[Usuarios] WHERE nombreUsuario=@pLoginName AND PasswordHash=HASHBYTES('SHA2_512', @pPassword+CAST(Salt AS NVARCHAR(36))))
 
        IF(@userID IS NULL)
            SET @responseMessage=0

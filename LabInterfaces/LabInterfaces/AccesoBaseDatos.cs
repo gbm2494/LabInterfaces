@@ -147,7 +147,7 @@ namespace LabInterfaces
          Recibe: 
          Modifica: 
          Retorna: */
-        public int agregarUsuario(string usuario, string password)
+        public int agregarUsuario(string usuario, string password, string cedula)
         {
             int error = 0;
             using (SqlConnection con = new SqlConnection(conexion))
@@ -155,17 +155,18 @@ namespace LabInterfaces
                 /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
                  * de segundo parámetro recibe el sqlConnection
                 */
-                using (SqlCommand cmd = new SqlCommand("uspAddUser", con))
+                using (SqlCommand cmd = new SqlCommand("agregarUsuario", con))
                 {
                     try
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        Boolean prueba = false;
-
                         //Se preparan los parámetros que recibe el procedimiento almacenado
                         cmd.Parameters.Add("@pLogin", SqlDbType.VarChar).Value = usuario;
                         cmd.Parameters.Add("@pPassword", SqlDbType.VarChar).Value = password;
+                        cmd.Parameters.Add("@cedula", SqlDbType.VarChar).Value = cedula;
+
+                        //se prepara el parámetro de retorno del procedimiento almacenado
                         SqlParameter outputIdParam = new SqlParameter("@responseMessage", SqlDbType.Bit)
                         {
                             Direction = ParameterDirection.Output
