@@ -17,5 +17,17 @@ GO
 CREATE PROCEDURE eliminarEstudiante @nombre varchar(20)
 
 AS
-	DELETE FROM Estudiante WHERE Estudiante.nombre = @nombre
+select distinct Estudiante.Cedula
+into #temp
+from Estudiante join Usuarios on Estudiante.Cedula = Usuarios.cedulaUsuario
+WHERE Estudiante.nombre = @nombre 
+
+delete Usuarios
+where cedulaUsuario in (select * from #temp)
+
+delete Estudiante
+where Cedula in (select * from #temp)
+
+drop table #temp
 GO
+

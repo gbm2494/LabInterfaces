@@ -37,28 +37,28 @@ FROM [dbo].[Usuarios]
 
 /*Pruebas*/
 
-DECLARE	@responseMessage bit
+DECLARE	@isInDB bit
 
 --Correct login and password
 EXEC	dbo.Login
-		@pLoginName = N'Admin',
-		@pPassword = N'123',
-		@responseMessage = @responseMessage OUTPUT
+		@pLoginName = N'gaudy',
+		@pPassword = N'hola',
+		@isInDB = @isInDB OUTPUT
 
-SELECT	@responseMessage as N'@responseMessage'
+SELECT	@isInDB as N'@isInDB'
 
 --Incorrect login
 EXEC	dbo.Login
 		@pLoginName = N'Admin1', 
 		@pPassword = N'123',
-		@responseMessage = @responseMessage OUTPUT
+		@isInDB = @isInDB OUTPUT
 
-SELECT	@responseMessage as N'@responseMessage'
+SELECT	@isInDB as N'@isInDB'
 
 --Incorrect password
 EXEC	dbo.Login
 		@pLoginName = N'Admin', 
 		@pPassword = N'1234',
-		@responseMessage = @responseMessage OUTPUT
+		@isInDB = @isInDB OUTPUT
 
-SELECT	@responseMessage as N'@responseMessage'
+SELECT	@isInDB as N'@isInDB'

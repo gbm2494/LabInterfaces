@@ -143,10 +143,11 @@ namespace LabInterfaces
 
         }
 
-        /*Método para llamar al procedimiento almacenado de agregar usuario 
-         Recibe: 
-         Modifica: 
-         Retorna: */
+        /*Método para llamar al procedimiento almacenado que permite agregar un nuevo usuario 
+         Recibe: el usuario y la contraseña del nuevo usuario así como la cédula del estudiante a quién se asocia ese usuario
+         Modifica: Agrega en la base de datos un nuevo usuario
+         Retorna: 1 si se pudo guardar el nuevo usuario, un número diferente a cero que corresponde al número de error
+         si no se pudo insertar*/
         public int agregarUsuario(string usuario, string password, string cedula)
         {
             int error = 0;
@@ -167,26 +168,78 @@ namespace LabInterfaces
                         cmd.Parameters.Add("@cedula", SqlDbType.VarChar).Value = cedula;
 
                         //se prepara el parámetro de retorno del procedimiento almacenado
-                        SqlParameter outputIdParam = new SqlParameter("@responseMessage", SqlDbType.Bit)
-                        {
-                            Direction = ParameterDirection.Output
-                        };
+                        cmd.Parameters.Add("@estado", SqlDbType.Bit).Direction = ParameterDirection.Output;
 
-                        cmd.Parameters.Add(outputIdParam);
-
+                        /*Se abre la conexión*/
                         con.Open();
 
                         //Se ejecuta el procedimiento almacenado
                         cmd.ExecuteNonQuery();
 
-                        return Convert.ToInt32(outputIdParam.Value);
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        return Convert.ToInt32(cmd.Parameters["@estado"].Value);
                         
                     }
                     catch (SqlException ex)
                     {
-
+                        /*Se capta el número de error si no se pudo insertar*/
                         error = ex.Number;
                         return error;
+                    }
+                }
+            }
+
+        }
+
+        /*Método para llamar al procedimiento almacenado para comprobar que un usuario está en la base de datos
+         Recibe: El usuario y contraseña que se desea verificar que está en la base de datos
+         Modifica: Busca el usuario con esa contraseña en la base de datos
+         Retorna: true si está en la base de datos, false sino*/
+        public bool login(string usuario, string password)
+        {
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                /*El sqlCommand recibe como primer parámetro el nombre del procedimiento almacenado, 
+                 * de segundo parámetro recibe el sqlConnection
+                */
+                using (SqlCommand cmd = new SqlCommand("Login", con))
+                {
+                    try
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        //Se preparan los parámetros que recibe el procedimiento almacenado
+                        cmd.Parameters.Add("@pLoginName", SqlDbType.VarChar).Value = usuario;
+                        cmd.Parameters.Add("@pPassword", SqlDbType.VarChar).Value = password;
+
+                        //se prepara el parámetro de retorno del procedimiento almacenado
+                        cmd.Parameters.Add("@isInDB", SqlDbType.Bit).Direction = ParameterDirection.Output;
+
+                        /*Se abre la conexión*/
+                        con.Open();
+
+                        //Se ejecuta el procedimiento almacenado
+                        cmd.ExecuteNonQuery();
+
+                        /*Se convierte en un valor entero lo que se devuelve el procedimiento*/
+                        int value = Convert.ToInt32(cmd.Parameters["@isInDB"].Value);
+
+                        /*Si el procedimiento devuelve 1 es que si se encuentra en la BD*/
+                        if (value == 1)
+                        {
+                            return true;
+                        }
+
+                        /*Si devuelve 0 es que no se encuentra en la BD*/
+                        else
+                        {
+                            return false;
+                        }
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        return false;
                     }
                 }
             }

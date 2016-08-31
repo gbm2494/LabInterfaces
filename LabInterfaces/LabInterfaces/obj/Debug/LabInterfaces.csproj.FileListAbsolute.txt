@@ -31,3 +31,4 @@ C:\Users\gblanco\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\Lab
 C:\Users\gblanco\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.ListaEstudiantes.resources
 C:\Users\gblanco\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.Properties.Resources.resources
 C:\Users\gblanco\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.csproj.GenerateResource.Cache
+C:\Users\gblanco\Desktop\LabInterfaces\LabInterfaces\LabInterfaces\obj\Debug\LabInterfaces.Login.resources

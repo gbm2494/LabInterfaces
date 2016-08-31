@@ -98,9 +98,9 @@ namespace LabInterfaces
         }
 
         /*Método para agregar un usuario mediante el procedimiento almacenado
-         Recibe: 
-         Modifica: 
-         Retorna: */
+         Recibe: el nombre de usuario, contraseña y cédula del estudiante al cual queremos crearle el nuevo usuario
+         Modifica: llama al método agregarUsuario de la base de datos para agregar el nuevo usuario
+         Retorna:  si se pudo agregar el nuevo usuario devuelve true, sino false*/
         public bool agregarUsuario(string nombre, string password, string cedula)
         {
 
@@ -117,6 +117,15 @@ namespace LabInterfaces
             {
                 return false;
             }
+        }
+
+        /*Método para verificar que dado un usuario y una contraseña el usuario si se encuentra en la base de datos
+         Recibe: el nombre y la contraseña que queremos verificar que existe en la base de datos
+         Modifica: obtiene si ese usuario y contraseña están en la bd
+         Retorna: true si se encuentra en la bd, false si no lo encuentra */
+        public bool login(string nombre, string password)
+        {
+            return bd.login(nombre, password);
         }
 
     }

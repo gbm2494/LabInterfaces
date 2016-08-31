@@ -24,7 +24,7 @@ namespace LabInterfaces
             estudiante = new Estudiante();
         }
 
-        /*Método que se activa al dar click en el botón guardar para guardar un nuevo estudiante en la base de datod*/
+        /*Método que se activa al dar click en el botón guardar para guardar un nuevo estudiante en la base de datos*/
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             //obtengo el genero seleccionado en la pantalla
@@ -67,9 +67,16 @@ namespace LabInterfaces
                     txtEmail.Clear();
                     txtDireccion.Clear();
                     txtTelefono.Clear();
+                    txtUsuario.Clear();
+                    txtPassword.Clear();
+                    
                 }
                 else
                 {
+                    /*Aquí se podría validar con distintos mensajes de error de acuerdo al número de error recibido
+                     y además, si no se pudo agregar el usuario para el estudiante lo ideal sería que se eliminara
+                     el estudiante que se acaba de crear, ya que hay una inconsistencia entre que si se guardara una
+                     tupla en Estudiante pero en Usuarios no*/
                     MessageBox.Show("Ya existe un estudiante asociado a este usuario en el sistema", "Resultados", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
