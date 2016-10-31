@@ -27,10 +27,10 @@ TRUNCATE TABLE [dbo].[Usuarios]
 DECLARE @responseMessage NVARCHAR(250)
 
 EXEC dbo.agregarUsuario
-		  @cedula = '123456789',
-          @pLogin = N'Admin',
-          @pPassword = N'123',
-          @responseMessage=@responseMessage OUTPUT
+		  @cedula = '115650402',
+          @pLogin = N'Gaudy',
+          @pPassword = N'hola',
+          @estado=@responseMessage OUTPUT
 
 SELECT cedulaUsuario, nombreUsuario, PasswordHash, Salt
 FROM [dbo].[Usuarios]
